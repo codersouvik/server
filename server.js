@@ -20,6 +20,10 @@ const URL=process.env.MONGODB_URI || `mongodb+srv://${User}:${Pass}@cluster0.cha
 
 Connection(URL);
 
+if(process.env.NODE_ENV==='production'){
+    app.use(express.static('client/build'));
+}
+
 
 app.listen(PORT,()=>console.log(`Server is running successfully on PORT ${PORT}`))
 

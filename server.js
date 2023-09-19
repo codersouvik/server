@@ -5,9 +5,17 @@ import Defaultdata from "./default.js";
 import Routes from "./routes/router.js";
 import  cors from "cors";
 import bodyParser from 'body-parser';
+const path = require("path");
 
 dotenv.config();
 const app=express();
+
+
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 
 const PORT=process.env.PORT || 8000;

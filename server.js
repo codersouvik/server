@@ -5,7 +5,7 @@ import Defaultdata from "./default.js";
 import Routes from "./routes/router.js";
 import  cors from "cors";
 import bodyParser from 'body-parser';
-const path = require("path");
+import build from '../client/build/index.html'
 
 dotenv.config();
 const app=express();
